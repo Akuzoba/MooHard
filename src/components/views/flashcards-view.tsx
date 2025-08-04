@@ -652,5 +652,3 @@ export function FlashcardsView({
     </div>
   );
 }
-
-export { FlashcardsView };
