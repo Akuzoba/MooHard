@@ -34,6 +34,7 @@ interface FlashcardsViewProps {
   flashcards: Flashcard[];
   isLoading?: boolean;
   onMasteryUpdate?: (masteredCount: number) => void;
+  onRegenerateFlashcards?: () => Promise<void>;
   error?: string | null;
 }
 
@@ -51,6 +52,7 @@ export function FlashcardsView({
   flashcards = [],
   isLoading = false,
   onMasteryUpdate,
+  onRegenerateFlashcards,
   error,
 }: FlashcardsViewProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
