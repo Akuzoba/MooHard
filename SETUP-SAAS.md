@@ -195,10 +195,45 @@ npm run dev
 
 ### **Option 1: Vercel (Recommended)**
 
-```bash
-npm run build
-vercel --prod
-```
+1. **Install Vercel CLI**
+
+   ```bash
+   npm install -g vercel
+   ```
+
+2. **Login to Vercel**
+
+   ```bash
+   vercel login
+   ```
+
+3. **Deploy**
+
+   ```bash
+   vercel --prod
+   ```
+
+4. **Set Environment Variables in Vercel Dashboard**
+
+   - Go to your project in Vercel Dashboard
+   - Click "Settings" → "Environment Variables"
+   - Add all variables from your `.env.local`:
+     - `GOOGLE_GENAI_API_KEY`
+     - `NEXT_PUBLIC_FIREBASE_API_KEY`
+     - `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN`
+     - `NEXT_PUBLIC_FIREBASE_PROJECT_ID`
+     - `NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET`
+     - `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID`
+     - `NEXT_PUBLIC_FIREBASE_APP_ID`
+
+5. **Update Firebase Auth Domain**
+
+   - In Firebase Console → Authentication → Settings
+   - Add your Vercel domain: `your-app.vercel.app`
+
+6. **Continuous Deployment**
+   - Connect your GitHub repository to Vercel
+   - Every push to main branch will auto-deploy
 
 ### **Option 2: Netlify**
 

@@ -227,7 +227,7 @@ export class DatabaseService {
           ...progress,
         };
 
-        await updateDoc(progressRef, newProgress);
+        await updateDoc(progressRef, newProgress as any);
       }
     } catch (error) {
       console.error("Error updating user progress:", error);

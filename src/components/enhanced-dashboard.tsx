@@ -24,6 +24,7 @@ import type {
   Question,
   Flashcard,
   UploadedFile,
+  FileType,
   StudySession,
   QuizResult,
   StudyAnalytics,
@@ -115,6 +116,8 @@ export function EnhancedDashboard({
       setFlashcards(
         existingStudySet.flashcards.map((card) => ({
           ...card,
+          category: card.category || "General",
+          difficulty: card.difficulty || "medium",
           tags: [], // Add missing tags property
         }))
       );
@@ -123,7 +126,7 @@ export function EnhancedDashboard({
       const files: UploadedFile[] = existingStudySet.files.map((file) => ({
         id: file.id,
         name: file.name,
-        type: file.type,
+        type: file.type as FileType,
         size: file.size,
         content: file.content,
         file: null, // Original file object not available
